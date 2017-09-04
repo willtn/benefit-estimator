@@ -1,0 +1,17 @@
+{
+  "name": "benefit-estimator",
+  "version": "1.0.0-rc.0",
+  "description": "Benefit Estimator for Student Benfit",
+  "main": "dist/index.js",
+  "authors": [
+    "Trung Nguyen"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

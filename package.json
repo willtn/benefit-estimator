@@ -1,0 +1,23 @@
+{
+  "name": "benefit-estimator",
+  "version": "1.0.0-rc.0",
+  "description": "Benefit Estimator for Student Benfit",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf build/**/* && webpack -p --progress --colors",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "rimraf dist/**/* && npm run build && cp -r build/* dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.pdx.groowin.com:trung.nguyen/benefit-estimator.git"
+  },
+  "author": "Trung Nguyen",
+  "private": true,
+  "devDependencies": {
+    "rimraf": "^2.6.1",
+    "ts-loader": "^2.3.4",
+    "typescript": "^2.5.2",
+    "webpack": "^3.5.5"
+  }
+}
