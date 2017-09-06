@@ -1,6 +1,6 @@
 {
   "name": "benefit-estimator",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0",
   "description": "Benefit Estimator for Student Benfit",
   "main": "dist/index.js",
   "authors": [
