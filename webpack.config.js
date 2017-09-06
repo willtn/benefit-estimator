@@ -9,7 +9,9 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'index.js'
+    filename: 'index.js',
+    library: 'benefit-estimator',
+    libraryTarget: 'umd'
   },
 
   // Currently we need to add '.ts' to the resolve.extensions array.
