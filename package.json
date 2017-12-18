@@ -4,7 +4,7 @@
   "description": "Benefit Estimator for Student Benfit",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rimraf build/**/* && webpack -p --progress --colors",
+    "build": "rimraf build/**/* && webpack -p --progress --colors && dts-bundle --name benefit-estimator --main build/index.d.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "rimraf dist/**/* && npm run build && cp -r build/* dist/"
   },
@@ -15,6 +15,7 @@
   "author": "Trung Nguyen",
   "private": true,
   "devDependencies": {
+    "dts-bundle": "^0.7.3",
     "rimraf": "^2.6.1",
     "ts-loader": "^2.3.4",
     "typescript": "^2.5.2",
