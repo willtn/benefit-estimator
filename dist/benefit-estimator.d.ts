@@ -3,6 +3,7 @@
 declare module 'benefit-estimator' {
     export * from "benefit-estimator/estimator";
     export * from "benefit-estimator/model";
+    export * from "benefit-estimator/quick";
 }
 
 declare module 'benefit-estimator/estimator' {
@@ -131,6 +132,16 @@ declare module 'benefit-estimator/model' {
         inviteBuyer: Price;
         inviteSeller: Price;
         bonus: Price;
+    }
+}
+
+declare module 'benefit-estimator/quick' {
+    import { EstimationParams } from "benefit-estimator/model";
+    /**
+        * Main purpose: converting quick estimation params into detailed estimation params
+        */
+    export class QuickEstimator {
+            convert(numInvites: number, dailyHours: number, haveWebsite: boolean): EstimationParams;
     }
 }
 
