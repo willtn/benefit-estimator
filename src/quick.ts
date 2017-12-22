@@ -173,8 +173,8 @@ export class QuickEstimator {
   }
 
   private host(hasWebsite: boolean, invitations: number) {
-    const sales = invitations * QuickEstimator.config.sales.host;
-    return (common: CommonParams): HostParams => hasWebsite && invitations * QuickEstimator.config.sales.host > 0 ?
+    const sales = Math.floor(invitations * QuickEstimator.config.sales.host);
+    return (common: CommonParams): HostParams => hasWebsite && sales > 0 ?
       new HostParams(
         common.offerPrice,
         sales,
