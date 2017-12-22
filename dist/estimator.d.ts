@@ -1,10 +1,10 @@
-import { ImpactReport, Price, OfferPrice, ImpactEstimation } from "./model";
+import { ImpactReport, Price, OfferPrice, ImpactEstimation, PromiseLike } from "./model";
 export declare class Estimator {
     private estimate;
     private all;
     private parser;
-    constructor(estimate: Estimation, all: (promises: Promise<Price>[]) => Promise<Price[]>);
-    total(report: ImpactReport): Promise<Price>;
+    constructor(estimate: Estimation, all: (promises: PromiseLike<Price>[]) => PromiseLike<Price[]>);
+    total(report: ImpactReport): PromiseLike<Price>;
     private create(params);
     private host(params);
     private inviteBuyer(params);
@@ -12,4 +12,4 @@ export declare class Estimator {
     private recommend(params);
     private nonEmpty(params);
 }
-export declare type Estimation = (price: OfferPrice, storeOwners: number) => Promise<ImpactEstimation>;
+export declare type Estimation = (price: OfferPrice, storeOwners: number) => PromiseLike<ImpactEstimation>;
