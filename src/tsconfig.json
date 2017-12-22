@@ -4,7 +4,6 @@
     "declarationDir": "../",
     "target": "ES5",
     "module": "es6",
-    "lib": ["dom", "es6"],
     "sourceMap": true,
     "inlineSources": true
   }

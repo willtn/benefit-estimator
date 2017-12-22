@@ -1,12 +1,12 @@
-import { ImpactReport, Price, CreationParams, HostParams, BuyerInvitationParams, SellerInvitationParams, RecommendParams, OfferPrice, ImpactEstimation, HasOffer } from "./model";
+import { ImpactReport, Price, CreationParams, HostParams, BuyerInvitationParams, SellerInvitationParams, RecommendParams, OfferPrice, ImpactEstimation, HasOffer, PromiseLike } from "./model";
 import { EstimationParser } from "./parser";
 
 export class Estimator {
   private parser = new EstimationParser();
 
-  constructor(private estimate: Estimation, private all: (promises: Promise<Price>[]) => Promise<Price[]>) { }
+  constructor(private estimate: Estimation, private all: (promises: PromiseLike<Price>[]) => PromiseLike<Price[]>) { }
 
-  public total(report: ImpactReport): Promise<Price> {
+  public total(report: ImpactReport): PromiseLike<Price> {
     const params = this.parser.parseReport(report);
     const promises = [
       this.create(params.create),
@@ -77,4 +77,4 @@ export class Estimator {
   }
 }
 
-export type Estimation = (price: OfferPrice, storeOwners: number) => Promise<ImpactEstimation>;
+export type Estimation = (price: OfferPrice, storeOwners: number) => PromiseLike<ImpactEstimation>;
